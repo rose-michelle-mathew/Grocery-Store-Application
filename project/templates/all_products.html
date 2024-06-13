@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="C:\Users\rosem\OneDrive\Desktop\Michelle\IITM\MAD_proj\css\stylesheet.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruits</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/stylesheet.css') }}">
+  </head>
+<body>
+  <div class ="navbar">
+    <div class ="logo">
+      <img src="{{ url_for('static', filename='/images/logo.png') }}"  width ="80px">
+    </div>
+    <div class="store-name">
+         The Green Grocer
+    </div>
+    <nav>
+        <ul>
+            <li><a href ="C:\Users\rosem\OneDrive\Desktop\Michelle\IITM\MAD_proj\templates\home.html"> Home </a></li>
+        
+        </ul>
+    </nav>
+    <img src="{{ url_for('static', filename='/images/bag.png') }}" width= "30px" height="30px">
+</div>
+<div class="fruit-head">
+  All Categories
+</div>
+<div class="prod-container">
+  {% for category in categories %}
+    <div class="product-block">
+      <div>
+       <div class="prod-name" > {{ category["Name"] }} </div>
+      </div>
+      <a href="" class="prod-btn" onclick="add_category()"> Edit Category + </a>
+      <a href="" class="prod-btn" onclick="delete_category()"> Delete Category + </a>
+      <a href="{{ url_for('view_products', category_id=category["ID"], category_name=category["Name"]) }}" class="prod-btn">View Products</a>
+
+    </div>
+      
+  {% endfor %}
+</div>
+</body>
+</html> 

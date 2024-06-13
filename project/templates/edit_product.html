@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Product</title>
+</head>
+<body>
+    <h1>Edit Product</h1>
+    <form method="POST" action="{{ url_for('edit_product', product_id=product.ID) }}">
+        <label for="name">Name:</label>
+        <input type="text" name="name" value="{{ product.Name }}" required><br>
+        <label for="price">Price:</label>
+        <input type="number" name="price" value="{{ product.Price }}" required><br>
+        <!-- <label for="category">Category:</label>
+        <input type="text" name="category" value="{{ product.Category }}" required><br> -->
+        <label for="description">Description:</label><br>
+        <textarea name="description" rows="4" cols="50" >{{ product.Description }}</textarea><br>
+        <button type="submit">Save Changes</button>
+    </form>
+</body>
+</html>

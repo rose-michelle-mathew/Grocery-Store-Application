@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delete Category</title>
+</head>
+<body>
+    <h1>Delete Category</h1>
+    <p>Are you sure you want to delete the category "{{ category_name }}"?</p>
+    <form method="POST" action="{{ url_for('delete_category', category_id=category_id, category_name=category_name) }}">
+        <button type="submit">Delete</button>
+    </form>
+    <a href="{{ url_for('manager_home') }}" class="prod-btn">Cancel</a>
+</body>
+</html>

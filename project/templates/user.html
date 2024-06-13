@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User or Admin Selection</title>
+</head>
+<body>
+    <h1>Select User Type</h1>
+    <div class="form-box-new">
+        <form action="{{ url_for('user_login') }}" method="GET">
+            <button type="submit">User</button>
+        </form>
+        <form action="{{ url_for('admin_login') }}" method="GET">
+            <button type="submit">Admin</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Products</title>
+</head>
+<body>
+    <h1>Add Products</h1>
+    <form method="POST" action="{{ url_for('add_products', category_id=category_id, category_name=category_name) }}">
+        <label for="Name">Product Name:</label>
+        <input type="text" name="Name" required><br>
+
+        <label for="Price">Price:</label>
+        <input type="number" name="Price" required><br>
+
+        <label for="Quantity">Quantity:</label>
+        <input type="number" name="Quantity" required><br>
+
+        <label for="Description">Description:</label>
+        <textarea name="Description"></textarea><br>
+
+        <button type="submit">Add Product</button>
+    </form>
+</body>
+</html>
